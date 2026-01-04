@@ -1,3 +1,31 @@
-<h1>Hello</h1>
-<p>If you see this, HTML is working</p>
-<link rel="stylesheet" href="assests/style.css">
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Enter the Date</title>
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+	<h1>Enter the Date<h/1>
+	<p>When did we start dating?</p>
+
+	<input id="answer" placeholder="MMDDYYYY" autocomplete="off">
+	<button id="go">Submit</button>
+
+	<p id="msg"></p>
+
+	<script>
+		const correct = "06182024";
+		
+		document.getElementById("go").onclick = () => {
+			const val = document.getElementById("answer").value.trim();
+			if (val === correct) {
+				window.location.href = "step-2.html";
+			} else {
+				document.getElementById("msg").textContent = "not quite, my love";
+			}
+		};
+	</script>
+</body>
+</html>
