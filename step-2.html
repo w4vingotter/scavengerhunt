@@ -22,8 +22,8 @@
 		const correct = "06182024";
 		
 		document.getElementById("go").onclick = () => {
-			const value = document.getElementById("answer").value.trim();
-			if (value === correct) {
+			const val = document.getElementById("answer").value.trim();
+			if (val === correct) {
 				window.location.href = "step-3.html";
 			} else {
 				document.getElementById("msg").textContent = "not quite, my love";
@@ -33,6 +33,7 @@
 </div>
 </body>
 </html>
+
 
 
 
