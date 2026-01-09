@@ -1,46 +1,60 @@
-<!doctype html> 
-<html> 
-<head> 
-	<meta charset="utf-8"> 
-	<title>exhibit four</title> 
-	<link rel="stylesheet" href="assets/style.css"> 
-</head> 
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>exhibit four</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
 
-<body class="page-five"> 
-<div class="overlay"> 
-	<h1>HEH you're so smart my love</h1> 
-	<p>lets make this a little harder</p> 
-	<p>what is my favourite(british) thing about you?</p> 
-	<p>this is easy...</p> 
-<form id="quiz"> 
-	<label><input type="radio" name="answer" value="eyes">eyes</label><br>
-	<label><input type="radio" name="answer" value="nose">nose</label><br> 
-	<label><input type="radio" name="answer" value="laugh">laugh</label><br> 
-	<label><input type="radio" name="answer" value="voice">voice</label><br> 
-	<label><input type="radio" name="answer" value="hair">hair</label><br> 
-	<label><input type="radio" name="answer" value="hands">hands</label><br> 
+<body class="page-five">
+  <div class="overlay">
+    <h1>HEH you're so smart my love</h1>
+    <p>lets make this a little harder</p>
+    <p>what is my favourite(british) thing about you?</p>
+    <p>this is easy...</p>
 
-<button type="button" id="go">submit</button> 
+    <!-- correct answer: ALL -->
 
-</form> 
-<p id="msg"></p> 
+    <form id="quiz">
+      <label><input type="radio" name="answer" value="eyes"> eyes</label><br>
+      <label><input type="radio" name="answer" value="nose"> nose</label><br>
+      <label><input type="radio" name="answer" value="laugh"> laugh</label><br>
+      <label><input type="radio" name="answer" value="voice"> voice</label><br>
+      <label><input type="radio" name="answer" value="hair"> hair</label><br>
+      <label><input type="radio" name="answer" value="hands"> hands</label><br>
 
-<p style="margin-top:16px"> if you havent found the right answer yet... why dont you inspect a little deeper?</p> 
+      <button type="button" id="go">submit</button>
+    </form>
 
-<input id="secretInput" placeholder="type the answer" autocomplete="off"> 
+    <p id="msg"></p>
 
-<script> 
-	document.getElementById("go").onclick= () => { 
-		const picked = document.querySelector('input[name="answer"]:checked'); 
-		const secret = document.getElementbyId("secretInput").value.trim().toLowerCase(); 
+    <div id="inspectHint" style="display:none; margin-top:16px;">
+      <p>if you haven't found the right answer yet... why dont you inspect a little deeper?</p>
+      <input id="secretInput" placeholder="type the answer" autocomplete="off">
+    </div>
 
-	if (secret === "all") { 
-		window.location.href = "step-6.html"; return; 
-	} 
+    <script>
+      let tries = 0;
 
-	document.getElementById("msg").textContent = "good guesses... youre not wrong... but i think you should inspect a little closer ;)"; 
-	}; 
-</script> 
-</div> 
-</body> 
+      document.getElementById("go").onclick = () => {
+        const secretBox = document.getElementById("secretInput"); // might not exist yet if hidden
+        const secret = secretBox ? secretBox.value.trim().toLowerCase() : "";
+
+        if (secret === "all") {
+          window.location.href = "step-6.html";
+          return;
+        }
+
+        tries++;
+
+        document.getElementById("msg").textContent =
+          "good guesses... you're not wrong... but i think you should inspect a little closer ;)";
+
+        if (tries >= 2) {
+          document.getElementById("inspectHint").style.display = "block";
+        }
+      };
+    </script>
+  </div>
+</body>
 </html>
