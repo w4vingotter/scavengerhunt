@@ -198,6 +198,10 @@ body.page-six {
   margin-left: 4px;
 }
 
+#typed {
+  white-space: pre-wrap;
+}
+
 @keyframes blink {
   50% { opacity: 0; }
 }
