@@ -139,6 +139,31 @@ body.page-six {
 	opacity: 0.6;
 	cursor: default;
 }
+/* hide helper (kept for other uses if you want) */
+.hidden { display: none; }
+
+/* FADE SYSTEM */
+.fade {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+/* stack input + submit */
+.answer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
 
 #playMusic2 {
 	padding: 10px 16px;
@@ -159,3 +184,21 @@ body.page-six {
 	opacity: 0.6;
 	cursor: default;
 }
+
+/* hint button playing state */
+#playMusic2.playing {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+/* typing cursor effect */
+#typed::after {
+  content: "▍";
+  animation: blink 0.9s steps(1) infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
