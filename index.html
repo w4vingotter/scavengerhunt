@@ -2,28 +2,30 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Enter the Date</title>
+	<title>beginning our journey</title>
 	<link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body>
-	<h1>Enter the Date<h/1>
-	<p>When did we start dating?</p>
+<body class="page-start">
+	<h1>HAPPY BIRTHDAY, MY LOVE!!!<h/1>
+	<p>now for this amazing birthday aquarium I have set for us today it'll require you to answer questions to continue from each exhibit/memory</p>
+	<p>first... how old are you turning?<p>
 
-	<input id="answer" placeholder="MMDDYYYY" autocomplete="off">
-	<button id="go">Submit</button>
+	<input id="answer" placeholder="age" autocomplete="off">
+	<button id="go">submit</button>
 
 	<p id="msg"></p>
 
 	<script>
-		const correct = "06182024";
+		const correct = "21";
 		
 		document.getElementById("go").onclick = () => {
 			const val = document.getElementById("answer").value.trim();
+			
 			if (val === correct) {
 				window.location.href = "step-2.html";
 			} else {
-				document.getElementById("msg").textContent = "not quite, my love";
+				document.getElementById("msg").textContent = "lets put our thinking cap on";
 			}
 		};
 	</script>
