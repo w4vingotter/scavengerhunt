@@ -1,1 +1,122 @@
-body { background : #f0f0f0; }
+body.page-start { 
+	font-family: Calibri, "Segoe UI", Arial, system-ui, sans-serif;
+	color: #FCFCFF;
+
+	background-image: url("startbg2.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;	
+
+	min-height: 100vh;
+	margin: 0;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+}
+
+body.page-two { 
+	font-family: Calibri, "Segoe UI", Arial, system-ui, sans-serif;
+	color: #2a2a2a;
+
+	background-image: url("pg2bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;	
+
+	min-height: 100vh;
+	margin: 0;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+}
+
+body.page-three { 
+	font-family: Calibri, "Segoe UI", Arial, system-ui, sans-serif;
+	color: #2a2a2a;
+
+	background-image: url("startbg3.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;	
+
+	min-height: 100vh;
+	margin: 0;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;	
+}
+
+body.page-four { 
+	font-family: Calibri, "Segoe UI", Arial, system-ui, sans-serif;
+	color: #666666;
+
+	background-image: url("sealbg.gif");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;	
+
+	min-height: 100vh;
+	margin: 0;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+}
+
+body.page-five { 
+	font-family: Calibri, "Segoe UI", Arial, system-ui, sans-serif;
+	color: #666666;
+
+	background-image: url("sealbg.gif");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;	
+
+	min-height: 100vh;
+	margin: 0;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+}
+
+.overlay {
+	background: rgba(255, 255, 255, 0.7);
+	padding: 40px;
+	border-radius: 20px;
+	max-width: 600px;
+	box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+#playMusic {
+	padding: 10px 16px;
+	border-radius: 12px;
+	border: none;
+	font-weight: 600;
+	cursor: pointer;
+	margin-bottom: 14px;
+	transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#playMusic:hover {
+	background: #d4e6ff;
+	transform: scale(1.05);
+}
+
+#playMusic:disabled {
+	opacity: 0.6;
+	cursor: default;
+}
