@@ -1,0 +1,46 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="utf-8"> 
+	<title>exhibit four</title> 
+	<link rel="stylesheet" href="assets/style.css"> 
+</head> 
+
+<body class="page-five"> 
+<div class="overlay"> 
+	<h1>HEH you're so smart my love</h1> 
+	<p>lets make this a little harder</p> 
+	<p>what is my favourite(british) thing about you?</p> 
+	<p>this is easy...</p> 
+<form id="quiz"> 
+	<label><input type="radio" name="answer" value="eyes">eyes</label><br>
+	<label><input type="radio" name="answer" value="nose">nose</label><br> 
+	<label><input type="radio" name="answer" value="laugh">laugh</label><br> 
+	<label><input type="radio" name="answer" value="voice">voice</label><br> 
+	<label><input type="radio" name="answer" value="hair">hair</label><br> 
+	<label><input type="radio" name="answer" value="hands">hands</label><br> 
+
+<button type="button" id="go">submit</button> 
+
+</form> 
+<p id="msg"></p> 
+
+<p style="margin-top:16px"> if you havent found the right answer yet... why dont you inspect a little deeper?</p> 
+
+<input id="secretInput" placeholder="type the answer" autocomplete="off"> 
+
+<script> 
+	document.getElementById("go").onclick= () => { 
+		const picked = document.querySelector('input[name="answer"]:checked'); 
+		const secret = document.getElementbyId("secretInput").value.trim().toLowerCase(); 
+
+	if (secret === "all") { 
+		window.location.href = "step-6.html"; return; 
+	} 
+
+	document.getElementById("msg").textContent = "good guesses... youre not wrong... but i think you should inspect a little closer ;)"; 
+	}; 
+</script> 
+</div> 
+</body> 
+</html>
