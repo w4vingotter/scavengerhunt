@@ -10,29 +10,31 @@
 <div class="overlay">
 
 <!-- old text -->
+<div id="question" class="fade">
 	<p>okay i think we should get to the point now LOL</p>
 	<p>but... before we get there one more question</p>
 	<p>what is our song? (in lowercase)</p>
 
-<button id="playMusic2" type="button">play for a hint</button>
+	<button id="playMusic2" type="button">play for a hint</button>
 
-<audio id="music">
-	<source src="assets/japanesedenim.mp3" type="audio/mpeg">
-</audio>
+	<audio id="music">
+		<source src="assets/japanesedenim.mp3" type="audio/mpeg">
+	</audio>
 
-<div class="answer-block">
-	<input id="answer" placeholder="title" autocomplete="off">
-	<button id="go" type="button">submit</button>
+	<div class="answer-block">
+		<input id="answer" placeholder="title" autocomplete="off">
+		<button id="go" type="button">submit</button>
+	</div>
+
+	<p id="msg"></p>
 </div>
 
-<p id="msg"></p>
-
-
 <!--new message-->
-<div id="success" class="hidden">
+<div id="success" class="fade fade-out" aria-hidden="true">
 	<h2> you know us so well mwah</h2>
 	<p> our lucky song heh.</p>
 	<p> now last but not least...</p>
+	<p id="type"></p>
 </div>
 
 </div>
@@ -44,6 +46,31 @@
 	const playBtn = document.getElementById("playMusic2");what 
 	const audio = document.getElementById("music");
 	const msg = document.getElementById("msg");
+
+	const question = document.getElementById("question");
+	const success = document.getElementById("success");
+	const typedE1 = document.getElementById("typed");
+	const longMessage = 
+		"INSERT HERE"
+
+	// typing function
+	function typeText(el, text, speed = 28) {
+		el.textContent = "";
+		let i =0;
+
+		function tick() {
+				el.textContent += text[i];
+				i++;
+			if (i < text.length) {
+					setTimeout(tick, speed);
+			} else {
+				// stop cursor blink at end
+				el.id = "";
+			}
+		}
+
+	tick();
+	}
 	
 	playBtn.addEventListener("click", () => {
 		audio.currentTime = 0;
@@ -58,8 +85,21 @@
 		const val = document.getElementById("answer").value.trim().toLowerCase();
 
 		if (val === correct) {
-			document.getElementById("question").classList.add("hidden");
-			document.getElementById("success").classList.remove("hidden");
+			msg.textContent = "";
+
+			question.classList.add("fade-out");
+
+			setTimeout(() => {
+				question.style.display = "none";
+
+				success.style.display = "block";
+				success.classList.remove("fade-out");
+				success.setAttribute("aria-hidden", "false");
+
+				typedE1.id = "typed";
+				typeText(typedE1, longMessage, 26);
+			}, 650);
+			
 		} else {
 			msg.textContent = "babyyy you can do it. i made you a book about the song :)"
 		}
@@ -67,3 +107,4 @@
 </script>
 </body>
 </html>
+
