@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>exhibit five</title>
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="page-six">
+<div class="overlay">
+
+	<p>okay i think we should get to the point now LOL</p>
+	<p>but... before we get there one more question</p>
+	<p>what is our song? (in lowercase)</p>
+
+<button id="playMusic2">play for a hint</button>
+
+<audio id="music">
+	<source src="assets/japanesedenim.mp3" type="audio/mpeg">
+</audio>
+
+<input id="answer" placeholder="title" autocomplete="off">
+<button id="go">submit</button>
+
+<script>
+	const correct = "japanese denim";
+
+	document.getElementById("go").onclick = () => {
+		const val = document.getElementById("answer").value.trim();
+		if (val === correct) {
+			window.location.href = "step-7.html";
+		} else {
+			document.getElementById("msg").textContent = "babyyy you can do it. i made you a book about the song.";
+		}
+	}:
+</script>
+</div>
+</body>
+</html>
