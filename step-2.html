@@ -2,33 +2,35 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>What is the song that I always say is ours?</title>
+	<title>exhibit one</title>
 	<link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body>
+<body class="page-two">
+<div class="overlay">
 	<h1>oh yeaaaa!! that's my girl<h/1>
-	<p>i would've been sad if you didn't get that</p>
-	<p>nowww what is the song that I always say is ours?</p>
-	<p> all lowercase pls</p>
+	<p>hottie is 21 now... total cougar</p>
+	<p>nowww when did we start dating?</p>
+	<p>this is easy...</p>
 
-	<input id="answer" placeholder="song title" autocomplete="off">
-	<button id="go">Submit</button>
+	<input id="answer" placeholder="MMDDYYYY" autocomplete="off">
+	<button id="go">submit</button>
 
 	<p id="msg"></p>
 
 	<script>
-		const correct = "japanese denim";
+		const correct = "06182024";
 		
 		document.getElementById("go").onclick = () => {
 			const val = document.getElementById("answer").value.trim();
-			
 			if (val === correct) {
 				window.location.href = "step-3.html";
 			} else {
-				document.getElementById("msg").textContent = "hint: i made you a book with it";
+				document.getElementById("msg").textContent = "not quite, my love";
 			}
 		};
 	</script>
+</div>
 </body>
 </html>
+
