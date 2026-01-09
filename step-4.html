@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>exhibit three</title>
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="page-four">
+<div class="overlay">
+	<h1>LET'S GOOO SEALLLLLLLL!!!!</h1>
+	<p>ONWARDS! can you finish this lyric?</p> 
+	<p>다른 여자는 관심 주지 말고</p>
+
+<button id="playMusic">play for a hint</button>
+
+<audio id="music">
+	<source src="assets/song.mp3" type="audio/mpeg">
+</audio>
+
+<form id="quiz">
+	<label>
+		<input type="radio" name="answer" value="A">
+		내 머리 어깨 무릎 발
+	</label><br>
+	
+	<label>
+		<input type="radio" name="answer" value="B">
+		나만 봐 I'm sorry
+	</label><br>
+	
+	<label>
+		<input type="radio" name="answer" value="C">
+		사랑, 원래 이기주의
+	</label><br>
+
+	<label>
+		<input type="radio" name="answer" value="D">
+		도저히 잊을 수 없을걸
+	</label><br>
+
+	<button type="button" id="go">submit</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+//for music
+	const music = document.getElementById("music");
+	const playBtn = document.getElementById("playMusic");
+
+	playBtn.onclick = () => {
+		music.play();
+		playBtn.textContent = "playing...";
+		playBtn.disabled = true;
+	};
+
+
+	const correct = "B";
+
+	document.getElementById("go").onclick = () => {
+		const choice = document.querySelector('input[name="answer"]:checked');
+
+		if (!choice) {
+			document.getElementById("msg").textContent = "pick one first silly";
+			return;
+		}
+
+		if (choice.value === correct) {
+			window.location.href = "step-5.html";
+		} else {
+			document.getElementById("msg").textContent = "not quite, my love. try again.";
+		}
+	};
+</script>
+</div>
+</body>
+
+</html>
