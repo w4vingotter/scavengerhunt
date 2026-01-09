@@ -9,6 +9,7 @@
 <body class="page-six">
 <div class="overlay">
 
+<!-- old text -->
 	<p>okay i think we should get to the point now LOL</p>
 	<p>but... before we get there one more question</p>
 	<p>what is our song? (in lowercase)</p>
@@ -19,30 +20,46 @@
 	<source src="assets/japanesedenim.mp3" type="audio/mpeg">
 </audio>
 
-<input id="answer" placeholder="title" autocomplete="off">
-<button id="go" type="button">submit</button>
+<div class="answer-block">
+	<input id="answer" placeholder="title" autocomplete="off">
+	<button id="go" type="button">submit</button>
+</div>
 
 <p id="msg"></p>
+
+
+<!--new message-->
+<div id="success" class="hidden">
+	<h2> you know us so well mwah</h2>
+	<p> our lucky song heh.</p>
+	<p> now last but not least...</p>
+</div>
+
 </div>
 
 <script>
 	const correct = "japanese denim";
 
 	const goBtn = document.getElementById("go");
-	const playBtn = document.getElementById("playMusic2");
+	const playBtn = document.getElementById("playMusic2");what 
 	const audio = document.getElementById("music");
 	const msg = document.getElementById("msg");
 	
 	playBtn.addEventListener("click", () => {
 		audio.currentTime = 0;
 		audio.play();
+	
+		playBtn.textContent = "playing..."
+		playBtn.disabled = true;
+		playBtn.classList.add("playing");
 	});
 
 	goBtn.addEventListener("click", () => {
 		const val = document.getElementById("answer").value.trim().toLowerCase();
 
 		if (val === correct) {
-			window.location.href = "step-7.html";
+			document.getElementById("question").classList.add("hidden");
+			document.getElementById("success").classList.remove("hidden");
 		} else {
 			msg.textContent = "babyyy you can do it. i made you a book about the song :)"
 		}
