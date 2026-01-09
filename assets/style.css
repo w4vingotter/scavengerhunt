@@ -76,9 +76,9 @@ body.page-four {
 
 body.page-five { 
 	font-family: Calibri, "Segoe UI", Arial, system-ui, sans-serif;
-	color: #666666;
+	color: #2a2a2a;
 
-	background-image: url("sealbg.gif");
+	background-image: url("cat.gif");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;	
